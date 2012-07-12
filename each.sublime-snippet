@@ -1,0 +1,7 @@
+<snippet>
+  <content><![CDATA[{{#each ${1}}}
+  ${2}
+{{/each}}]]></content>
+  <tabTrigger>each</tabTrigger>
+  <scope>source.handlebars</scope>
+</snippet>

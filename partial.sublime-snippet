@@ -1,0 +1,5 @@
+<snippet>
+  <content>{{> ${1}}}</content>
+  <tabTrigger>par</tabTrigger>
+  <scope>source.handlebars</scope>
+</snippet>
