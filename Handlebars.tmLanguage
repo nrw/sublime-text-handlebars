@@ -635,7 +635,7 @@
 		</dict>
 	</dict>
 	<key>scopeName</key>
-	<string>text.html.handlebars</string>
+	<string>source.handlebars</string>
 	<key>uuid</key>
 	<string>1d7c0a8c-2361-4f78-b98e-1eaf2a288d3f</string>
 </dict>
