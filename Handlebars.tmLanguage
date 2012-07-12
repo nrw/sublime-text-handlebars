@@ -17,6 +17,10 @@
 	<array>
 		<dict>
 			<key>include</key>
+			<string>#comments</string>
+		</dict>
+		<dict>
+			<key>include</key>
 			<string>#partial_and_var</string>
 		</dict>
 		<dict>
@@ -77,6 +81,33 @@
 				<dict>
 					<key>include</key>
 					<string>#string_double_quoted</string>
+				</dict>
+			</array>
+		</dict>
+		<key>comments</key>
+		<dict>
+			<key>patterns</key>
+			<array>
+				<dict>
+					<key>begin</key>
+					<string>\{\{!</string>
+					<key>end</key>
+					<string>\}\}</string>
+					<key>name</key>
+					<string>comment.block.handlebars</string>
+					<key>patterns</key>
+					<array>
+						<dict>
+							<key>match</key>
+							<string>@\w*</string>
+							<key>name</key>
+							<string>keyword.annotation.handlebars</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#comments</string>
+						</dict>
+					</array>
 				</dict>
 			</array>
 		</dict>

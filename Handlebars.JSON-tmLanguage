@@ -8,12 +8,28 @@
   "foldingStopMarker": "(?x)(</(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|form|dl)>|^\\s*-->|(^|\\s)\\}|\\{\\{/)",
 
   "patterns": [
+    { "include": "#comments" },
     { "include": "#partial_and_var" },
     { "include": "#block_helper" },
     { "include": "#end_block" },
     { "include": "#html_tags" }
   ],
   "repository": {
+    "comments" : {
+      "patterns": [
+        { "name" : "comment.block.handlebars",
+          "begin" : "\\{\\{!",
+          "end" : "\\}\\}",
+          "patterns" : [
+            {
+              "name" : "keyword.annotation.handlebars",
+              "match" : "@\\w*"
+            },
+            { "include": "#comments" }
+          ]
+        }
+      ]
+    },
     "partial_and_var": { 
       "name": "meta.function.inline.other.handlebars",
       "begin": "(\\{\\{\\{*>*)\\s*([a-zA-Z_-]+)",
