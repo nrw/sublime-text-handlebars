@@ -1,6 +1,6 @@
 <snippet>
   <content><![CDATA[{{#with ${1}}}
-  ${2}
+  ${0}
 {{/with}}]]></content>
   <tabTrigger>with</tabTrigger>
   <scope>source.handlebars</scope>

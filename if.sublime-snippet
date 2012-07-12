@@ -1,6 +1,6 @@
 <snippet>
   <content><![CDATA[{{#if ${1}}}
-  ${2}
+  ${0}
 {{/if}}]]></content>
   <tabTrigger>if</tabTrigger>
   <scope>source.handlebars</scope>
