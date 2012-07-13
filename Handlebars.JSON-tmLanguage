@@ -32,7 +32,7 @@
     },
     "partial_and_var": { 
       "name": "meta.function.inline.other.handlebars",
-      "begin": "(\\{\\{\\{*>*)\\s*([a-zA-Z_\\.-]+)*",
+      "begin": "(\\{\\{\\{*>*)\\s*([-a-zA-Z_]+)*",
       "end": "(\\}\\}\\}*)",
       "beginCaptures": {
         "1": { "name": "support.constant.handlebars" },
@@ -48,7 +48,7 @@
     },
     "block_helper": { 
       "name": "meta.function.block.start.handlebars.sproutcore",
-      "begin": "(\\{\\{\\#)([a-zA-Z_\\.-]+)\\s*([a-zA-Z_\\.-]+)*",
+      "begin": "(\\{\\{\\#)([a-zA-Z_\\.-]+)\\s+([a-zA-Z_\\.-]+)*",
       "end": "(\\}\\})",
   
       "beginCaptures": {
@@ -90,9 +90,10 @@
         "0": { "name": "punctuation.definition.string.end.html" }
       },
       "patterns": [
-        { "include": "#partial_and_var" },
+        { "include": "#comments" },
         { "include": "#block_helper" },
-        { "include": "#end_block" }
+        { "include": "#end_block" },
+        { "include": "#partial_and_var" }
       ]
     },
     "string_single_quoted": {
@@ -106,15 +107,19 @@
         "0": { "name": "punctuation.definition.string.end.html" } 
       },
       "patterns": [
-        { "include": "#partial_and_var" },
+        { "include": "#comments" },
         { "include": "#block_helper" },
-        { "include": "#end_block" }
+        { "include": "#end_block" },
+        { "include": "#partial_and_var" }
       ]
     },
     "tag_generic_attribute": {
       "name": "entity.other.attribute-name.html",
       "match": "\\b([a-zA-Z\\-:]+)",
       "patterns": [
+        { "include": "#comments" },
+        { "include": "#block_helper" },
+        { "include": "#end_block" },
         { "include": "#partial_and_var" }
       ]
     },
@@ -152,6 +157,10 @@
             "0": { "name": "punctuation.definition.string.end.html" } 
           },
           "patterns": [
+            { "include": "#comments" },
+            { "include": "#block_helper" },
+            { "include": "#end_block" },
+            { "include": "#partial_and_var" }
           ]
         }
       ]

@@ -41,7 +41,7 @@
 		<key>block_helper</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{\{\#)([a-zA-Z_\.-]+)\s*([a-zA-Z_\.-]+)*</string>
+			<string>(\{\{\#)([a-zA-Z_\.-]+)\s+([a-zA-Z_\.-]+)*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -400,7 +400,7 @@
 		<key>partial_and_var</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{\{\{*&gt;*)\s*([a-zA-Z_\.-]+)*</string>
+			<string>(\{\{\{*&gt;*)\s*([-a-zA-Z_]+)*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -466,7 +466,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#partial_and_var</string>
+					<string>#comments</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -475,6 +475,10 @@
 				<dict>
 					<key>include</key>
 					<string>#end_block</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#partial_and_var</string>
 				</dict>
 			</array>
 		</dict>
@@ -506,7 +510,7 @@
 			<array>
 				<dict>
 					<key>include</key>
-					<string>#partial_and_var</string>
+					<string>#comments</string>
 				</dict>
 				<dict>
 					<key>include</key>
@@ -515,6 +519,10 @@
 				<dict>
 					<key>include</key>
 					<string>#end_block</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#partial_and_var</string>
 				</dict>
 			</array>
 		</dict>
@@ -601,6 +609,22 @@
 					<string>string.quoted.single.html</string>
 					<key>patterns</key>
 					<array>
+						<dict>
+							<key>include</key>
+							<string>#comments</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#block_helper</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#end_block</string>
+						</dict>
+						<dict>
+							<key>include</key>
+							<string>#partial_and_var</string>
+						</dict>
 					</array>
 				</dict>
 			</array>
@@ -613,6 +637,18 @@
 			<string>entity.other.attribute-name.html</string>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>include</key>
+					<string>#comments</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#block_helper</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#end_block</string>
+				</dict>
 				<dict>
 					<key>include</key>
 					<string>#partial_and_var</string>
