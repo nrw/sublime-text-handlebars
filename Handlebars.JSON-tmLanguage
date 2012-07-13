@@ -1,7 +1,7 @@
 { 
   "name": "Handlebars",
   "uuid": "1d7c0a8c-2361-4f78-b98e-1eaf2a288d3f",
-  "scopeName": "source.handlebars",
+  "scopeName": "text.html.handlebars",
   "fileTypes": ["handlebars", "hbs"],
   
   "foldingStartMarker": "(?x)(<(?i:head|body|table|thead|tbody|tfoot|tr|div|select|fieldset|style|script|ul|ol|form|dl)\\b.*?>|<!--(?!.*-->)|\\{\\s*($|\\?>\\s*$|//|/\\*(.*\\*/\\s*$|(?!.*?\\*/)))|\\{\\{\\#)",
@@ -32,21 +32,23 @@
     },
     "partial_and_var": { 
       "name": "meta.function.inline.other.handlebars",
-      "begin": "(\\{\\{\\{*>*)\\s*([a-zA-Z_-]+)*",
+      "begin": "(\\{\\{\\{*>*)\\s*([a-zA-Z_\\.-]+)*",
       "end": "(\\}\\}\\}*)",
       "beginCaptures": {
         "1": { "name": "support.constant.handlebars" },
         "2": { "name": "variable.parameter.handlebars" }
       },
       "endCaptures": { 
-        "1": { "name": "support.constant.handlebars" } 
+        "1": { "name": "support.constant.handlebars" }
       },
       "patterns": [
+        { "include": "#string_single_quoted" },
+        { "include": "#string_double_quoted" }
       ]
     },
     "block_helper": { 
       "name": "meta.function.block.start.handlebars.sproutcore",
-      "begin": "(\\{\\{\\#)([a-zA-Z_-]+)\\s*([a-zA-Z_-]+)*",
+      "begin": "(\\{\\{\\#)([a-zA-Z_\\.-]+)\\s*([a-zA-Z_\\.-]+)*",
       "end": "(\\}\\})",
   
       "beginCaptures": {
@@ -64,7 +66,7 @@
     },
     "end_block": {
       "name": "meta.function.block.end.handlebars.sproutcore",
-      "begin": "(\\{\\{/)([a-zA-Z_-]+)\\s*",
+      "begin": "(\\{\\{/)([a-zA-Z_\\.-]+)\\s*",
       "end": "(\\}\\})",
       "beginCaptures": {
         "1": { "name": "support.constant.handlebars" },

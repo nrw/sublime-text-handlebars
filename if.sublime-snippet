@@ -3,5 +3,5 @@
   ${0}
 {{/if}}]]></content>
   <tabTrigger>if</tabTrigger>
-  <scope>source.handlebars</scope>
+  <scope>text.html.handlebars</scope>
 </snippet>

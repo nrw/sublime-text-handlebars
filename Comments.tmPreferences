@@ -5,7 +5,7 @@
   <key>name</key>
   <string>Comments</string>
   <key>scope</key>
-  <string>source.handlebars</string>
+  <string>text.html.handlebars</string>
   <key>settings</key>
   <dict>
     <key>shellVariables</key>

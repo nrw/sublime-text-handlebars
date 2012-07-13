@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
 	<key>fileTypes</key>
@@ -41,7 +41,7 @@
 		<key>block_helper</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{\{\#)([a-zA-Z_-]+)\s*([a-zA-Z_-]+)*</string>
+			<string>(\{\{\#)([a-zA-Z_\.-]+)\s*([a-zA-Z_\.-]+)*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -114,7 +114,7 @@
 		<key>end_block</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{\{/)([a-zA-Z_-]+)\s*</string>
+			<string>(\{\{/)([a-zA-Z_\.-]+)\s*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -400,7 +400,7 @@
 		<key>partial_and_var</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{\{\{*&gt;*)\s*([a-zA-Z_-]+)*</string>
+			<string>(\{\{\{*&gt;*)\s*([a-zA-Z_\.-]+)*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -428,6 +428,14 @@
 			<string>meta.function.inline.other.handlebars</string>
 			<key>patterns</key>
 			<array>
+				<dict>
+					<key>include</key>
+					<string>#string_single_quoted</string>
+				</dict>
+				<dict>
+					<key>include</key>
+					<string>#string_double_quoted</string>
+				</dict>
 			</array>
 		</dict>
 		<key>string_double_quoted</key>
@@ -635,7 +643,7 @@
 		</dict>
 	</dict>
 	<key>scopeName</key>
-	<string>source.handlebars</string>
+	<string>text.html.handlebars</string>
 	<key>uuid</key>
 	<string>1d7c0a8c-2361-4f78-b98e-1eaf2a288d3f</string>
 </dict>

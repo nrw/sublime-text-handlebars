@@ -3,5 +3,5 @@
   ${0}
 {{/each}}]]></content>
   <tabTrigger>each</tabTrigger>
-  <scope>source.handlebars</scope>
+  <scope>text.html.handlebars</scope>
 </snippet>

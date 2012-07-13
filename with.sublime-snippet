@@ -3,5 +3,5 @@
   ${0}
 {{/with}}]]></content>
   <tabTrigger>with</tabTrigger>
-  <scope>source.handlebars</scope>
+  <scope>text.html.handlebars</scope>
 </snippet>
