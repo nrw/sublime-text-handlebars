@@ -32,7 +32,7 @@
     },
     "partial_and_var": { 
       "name": "meta.function.inline.other.handlebars",
-      "begin": "(\\{\\{\\{*>*)\\s*([-a-zA-Z_]+)*",
+      "begin": "(\\{\\{\\{*>*)\\s*([-a-zA-Z_\\./]+)*",
       "end": "(\\}\\}\\}*)",
       "beginCaptures": {
         "1": { "name": "support.constant.handlebars" },
@@ -47,8 +47,8 @@
       ]
     },
     "block_helper": { 
-      "name": "meta.function.block.start.handlebars.sproutcore",
-      "begin": "(\\{\\{\\#)([a-zA-Z_\\.-]+)\\s+([a-zA-Z_\\.-]+)*",
+      "name": "meta.function.block.start.handlebars",
+      "begin": "(\\{\\{\\#)([-a-zA-Z_\\./]+)\\s+([-a-zA-Z_\\./]+)*",
       "end": "(\\}\\})",
   
       "beginCaptures": {

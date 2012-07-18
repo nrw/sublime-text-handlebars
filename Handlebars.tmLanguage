@@ -41,7 +41,7 @@
 		<key>block_helper</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{\{\#)([a-zA-Z_\.-]+)\s+([a-zA-Z_\.-]+)*</string>
+			<string>(\{\{\#)([-a-zA-Z_\./]+)\s+([-a-zA-Z_\./]+)*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
@@ -71,7 +71,7 @@
 				</dict>
 			</dict>
 			<key>name</key>
-			<string>meta.function.block.start.handlebars.sproutcore</string>
+			<string>meta.function.block.start.handlebars</string>
 			<key>patterns</key>
 			<array>
 				<dict>
@@ -400,7 +400,7 @@
 		<key>partial_and_var</key>
 		<dict>
 			<key>begin</key>
-			<string>(\{\{\{*&gt;*)\s*([-a-zA-Z_]+)*</string>
+			<string>(\{\{\{*&gt;*)\s*([-a-zA-Z_\./]+)*</string>
 			<key>beginCaptures</key>
 			<dict>
 				<key>1</key>
